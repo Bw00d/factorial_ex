@@ -9,19 +9,19 @@ var factorial = function(input) {
 
     if (input === 0) {
       result = 1;
+      products.push(1);
     } else {
-      for (var i = input; i > 1; i--) {
+      for (var i = input; i > 0; i--) {
 
         result *= i;
         products.push(result);
-
-        //outputResults(result);
       }
     }
 
     productsArray = products;
 
     return result;
+
   } else {
     return false;
   }
@@ -32,21 +32,20 @@ $(document).ready(function() {
 
   var adjustProducts = function(myProducts) {
 
-    newProductsArray = myProducts.split[','];
-
-    for (var x = 0; x < newProductsArray.length; x++) {
-      $('#triangle').append(newProductsArray[x] + ' - ');
+    for (var x = 0; x < myProducts.length - 2; x++) {
+      if (x === myProducts.length - 1) {
+        $('#triangle').append('<span id="last-product">' + myProducts[x] + '</span>');
+      } else {
+        $('#triangle').append(myProducts[x] + '<br>');
+      }
     }
 
   };
 
   $('#factorial').submit(function(event) {
-
-
-
-
-    //$('#result').text(factorial($('#number').val()));
-    $('#result').prepend(factorial($('#number').val()));
+    $('#triangle').empty();
+    $('#final-result').empty();
+    $('#final-result').prepend(factorial($('#number').val()));
 
     adjustProducts(productsArray);
 

@@ -14,13 +14,16 @@ body {
   background-color: white;
   padding: 30px;
 }
+
 input, button {
   margin: 0 5px 0 0;
 }
+
 button {
   display: inline;
   float: left;
 }
+
 input {
   display: inline;
   float: left;
@@ -28,18 +31,35 @@ input {
   text-align: center;
   width: 60px !important;
 }
+
 form {
   clear: both;
 }
 
-#result {display: none;}
-
-#left-col, #right-col {
-  float: right;
-  width: 100px;
-  border: 1px solid blue;
-  border-bottom: none;
+#result {
+  display: none;
 }
-#right-col {
-  margin-top: 25px;
+
+#final-result {
+  color:red;
+  text-align: center;
+  font-family: 'Share Tech', sans-serif;
+  font-size:20px;
+}
+
+#triangle {
+  clear: both;
+  text-align: center;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 18px;
+
+}
+#definition {
+  text-align: center;
+  color: blue;
+  text-decoration: none;
+}
+#definition a:hover {
+  text-decoration: none;
+  color: red;
 }
